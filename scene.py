@@ -1,0 +1,23 @@
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from manim import *
+
+class CreateCircle(Scene):
+    def construct(self):
+        circle = Circle()
+        circle.set_fill(PINK, opacity=0.5)
+        self.play(Create(circle))
+
+class SquareToCircle(Scene):
+    def construct(self):
+        circle = Circle()
+        circle.set_fill(PINK, opacity=0.5)
+
+        square = Square()
+        square.rotate(PI / 4)
+
+        self.play(Create(square))
+        self.play(Transform(square, circle))
+        self.play(FadeOut(square))
